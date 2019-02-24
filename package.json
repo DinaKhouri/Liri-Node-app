@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/DinaKhouri/Liri-Node-app/issues"
   },
-  "homepage": "https://github.com/DinaKhouri/Liri-Node-app#readme"
+  "homepage": "https://github.com/DinaKhouri/Liri-Node-app#readme",
+  "dependencies": {
+    "node-spotify-api": "^1.0.7"
+  }
 }

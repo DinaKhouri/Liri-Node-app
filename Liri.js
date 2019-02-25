@@ -7,7 +7,8 @@ var axios = require("axios");
 var Spotify = require("node-spotify-api");
 var spotify = new Spotify(keys.spotify);
 var action = process.argv[2];
-var value = process.argv[3];
+var spliceIt = process.argv.splice(3);
+var value = spliceIt.join("+");
 
 switch (action) {
   case "concert-this":
@@ -41,15 +42,23 @@ function concertThis() {
 }
 
 //function spotifyThis()
+//need to add value="The+Sign"
 function spotifyThis() {
-  spotify.search({ type: "track", query: value, limit: 20 }, function(
-    err,
-    data
-  ) {
+  //   if ((value = null)) {
+  //     value = "The+Sign";
+  //   }
+  spotify.search({ type: "track", query: value }, function(err, data) {
     if (err) {
       return console.log(err);
     }
-    console.log(data);
+    var artist = data.tracks.items[0].album.artists[0].name;
+    var song = data.tracks.items[0].name;
+    var preview = data.tracks.items[0].preview_url;
+    var album = data.tracks.items[0].album.name;
+    console.log("Song name : " + song);
+    console.log("Artist: " + artist);
+    console.log("From Album: " + album);
+    console.log("Wanna Listen? " + preview);
   });
 }
 

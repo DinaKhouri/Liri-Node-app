@@ -82,7 +82,7 @@ function spotifyThis(value) {
 //value = 'mr+nobody'
 
 function movieThis(value) {
-  var url = "http://www.omdbapi.com/?apikey=38d9d9f4=" + value;
+  var url = "http://www.omdbapi.com/?apikey=e7285efe&t=" + value;
   axios
     .get(url)
     .then(response => {

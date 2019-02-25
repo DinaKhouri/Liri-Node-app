@@ -12,21 +12,24 @@ var value = spliceIt.join("+");
 
 switch (action) {
   case "concert-this":
-    concertThis();
+    concertThis(value);
     break;
   case "spotify-this-song":
-    spotifyThis();
+    spotifyThis(value);
     break;
   case "movie-this":
-    movieThis();
+    movieThis(value);
     break;
   case "do-what-it-says":
-    doWhat();
+    doWhat(value);
     break;
 }
 //concert-this
 // just figure the value= rhye
-function concertThis() {
+function concertThis(value) {
+  //   if ((value = undefined)) {
+  //     value = "rhye";
+  //   }
   var url =
     "https://rest.bandsintown.com/artists/" +
     value +
@@ -55,7 +58,7 @@ function concertThis() {
 
 //function spotifyThis()
 //need to add value="The+Sign"
-function spotifyThis() {
+function spotifyThis(value) {
   //   if ((value = null)) {
   //     value = "The+Sign";
   //   }
@@ -77,7 +80,7 @@ function spotifyThis() {
 //function movieThis()
 //working i just need to figure the api problem
 //value = 'mr+nobody'
-function movieThis() {
+function movieThis(value) {
   var url = "http://www.omdbapi.com/?apikey=38d9d9f4=" + value;
   axios
     .get(url)
@@ -105,7 +108,7 @@ function movieThis() {
     });
 }
 
-//function doWhat()
+//function doWhat(value)
 //get back to it later
 // function doWhat() {
 //   fs.readFile("random.txt", "utf8", function(err, data) {

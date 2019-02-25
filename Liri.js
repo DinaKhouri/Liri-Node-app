@@ -63,12 +63,13 @@ function spotifyThis() {
 }
 
 //function movieThis()
-//working , need to add details and loops for specific required info
+//working i just need to figure the api problem
 function movieThis() {
+  var url = "http://www.omdbapi.com/?apikey=38d9d9f4=" + value;
   axios
-    .get("http://www.omdbapi.com/?apikey=38d9d9f4=" + value)
+    .get(url)
     .then(response => {
-      //console.log(response);
+      // console.log(response);
       var title = response.data.Title;
       var year = response.data.Year;
       var imdb = response.data.Ratings[0].Value;
@@ -81,7 +82,7 @@ function movieThis() {
       console.log("released in " + year);
       console.log("imdb: " + imdb);
       console.log("rotten tomatoes: " + tom);
-      console.log("was produced in" + country);
+      console.log("was produced in " + country);
       console.log("languages: " + language);
       console.log("plot: " + plot);
       console.log("cast is : " + cast);

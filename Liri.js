@@ -118,14 +118,22 @@ function doWhat(value) {
     }
     var txtData = data.split(",");
     action = txtData[0];
-    value = txtData[0].join("+"); //problem here
+    //console.log(action);
+    var valueOne = txtData[1];
+    //console.log(valueOne);
+    //source fore replace code https://stackoverflow.com/questions/19873002/how-to-replace-all-spaces-in-a-string/19873010
+    myvalue = valueOne.replace(/ /g, "+");
+    //console.log(value);
     // if ((action = "concert-This")) {
+    //   value = myvalue;
     //   concertThis(value);
     // }
-    // if ((action = "spotify-this-song")) {
-    //   spotifyThis(value);
-    // }
+    if ((action = "spotify-this-song")) {
+      value = myvalue;
+      spotifyThis(value);
+    }
     // if ((action = "movie-this")) {
+    //   value = myvalue;
     //   movieThis(value);
     // }
   });

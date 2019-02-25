@@ -25,7 +25,7 @@ switch (action) {
     break;
 }
 //concert-this
-// find the correct line to show data then use for loop
+// just figure the value= rhye
 function concertThis() {
   var url =
     "https://rest.bandsintown.com/artists/" +
@@ -35,14 +35,18 @@ function concertThis() {
     .get(url)
     .then(response => {
       // console.log(response);
-      var venue = response.data[1].venue.name;
-      var city = response.data[1].venue.city;
-      var date = moment(response.data[1].datetime).format(
-        "MMMM Do YYYY, h:mm a"
-      );
-      console.log("Venue :" + venue);
-      console.log("City: " + city);
-      console.log("Date: " + date);
+      //console.log(response.data.length);
+      for (i = 1; i < response.data.length; i++) {
+        var venue = response.data[i].venue.name;
+        var city = response.data[i].venue.city;
+        var date = moment(response.data[i].datetime).format(
+          "MMMM Do YYYY, h:mm a"
+        );
+        console.log("Show #" + i);
+        console.log("Venue :" + venue);
+        console.log("City: " + city);
+        console.log("Date: " + date);
+      }
     })
     .catch(error => {
       console.log(error);

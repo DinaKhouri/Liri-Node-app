@@ -1,6 +1,6 @@
 require("dotenv").config();
 
-// var fs = require("fs");
+var fs = require("fs");
 var keys = require("./keys.js");
 var axios = require("axios");
 var moment = require("moment");
@@ -80,6 +80,7 @@ function spotifyThis(value) {
 //function movieThis()
 //working i just need to figure the api problem
 //value = 'mr+nobody'
+
 function movieThis(value) {
   var url = "http://www.omdbapi.com/?apikey=38d9d9f4=" + value;
   axios
@@ -110,25 +111,22 @@ function movieThis(value) {
 
 //function doWhat(value)
 //get back to it later
-// function doWhat() {
-//   fs.readFile("random.txt", "utf8", function(err, data) {
-//     if (err) {
-//       console.log(err);
-//     }
-//     if ((data = "concert-This")) {
-//       action = data[0];
-//       value = data[1];
-//       concertThis();
-//     }
-//     if ((data = "spotify-this-song")) {
-//       action = data[0];
-//       value = data[1];
-//       spotifyThis();
-//     }
-//     if ((data = "movie-this")) {
-//       action = data[0];
-//       value = data[1];
-//       movieThis();
-//     }
-//   });
-// }
+function doWhat(value) {
+  fs.readFile("random.txt", "utf8", function(err, data) {
+    if (err) {
+      console.log(err);
+    }
+    var txtData = data.split(",");
+    action = txtData[0];
+    value = txtData[0].join("+"); //problem here
+    // if ((action = "concert-This")) {
+    //   concertThis(value);
+    // }
+    // if ((action = "spotify-this-song")) {
+    //   spotifyThis(value);
+    // }
+    // if ((action = "movie-this")) {
+    //   movieThis(value);
+    // }
+  });
+}

@@ -3,7 +3,7 @@ require("dotenv").config();
 // var fs = require("fs");
 var keys = require("./keys.js");
 var axios = require("axios");
-// var moment = require("moment");
+var moment = require("moment");
 var Spotify = require("node-spotify-api");
 var spotify = new Spotify(keys.spotify);
 var action = process.argv[2];
@@ -34,7 +34,15 @@ function concertThis() {
   axios
     .get(url)
     .then(response => {
-      console.log(response);
+      // console.log(response);
+      var venue = response.data[1].venue.name;
+      var city = response.data[1].venue.city;
+      var date = moment(response.data[1].datetime).format(
+        "MMMM Do YYYY, h:mm a"
+      );
+      console.log("Venue :" + venue);
+      console.log("City: " + city);
+      console.log("Date: " + date);
     })
     .catch(error => {
       console.log(error);
@@ -64,6 +72,7 @@ function spotifyThis() {
 
 //function movieThis()
 //working i just need to figure the api problem
+//value = 'mr+nobody'
 function movieThis() {
   var url = "http://www.omdbapi.com/?apikey=38d9d9f4=" + value;
   axios

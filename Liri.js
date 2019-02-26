@@ -13,15 +13,19 @@ var value = spliceIt.join("+");
 switch (action) {
   case "concert-this":
     concertThis(value);
+    log(action, value);
     break;
   case "spotify-this-song":
     spotifyThis(value);
+    log(action, value);
     break;
   case "movie-this":
     movieThis(value);
+    log(action, value);
     break;
   case "do-what-it-says":
     doWhat(value);
+    log(action, value);
     break;
 }
 //concert-this
@@ -136,5 +140,14 @@ function doWhat(value) {
     //   value = myvalue;
     //   movieThis(value);
     // }
+  });
+}
+//Bonus
+function log() {
+  fs.appendFile("log.txt", ", " + action + " for " + value, function(err) {
+    if (err) {
+      console.log(err);
+    }
+    console.log("logged");
   });
 }

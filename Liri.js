@@ -12,14 +12,29 @@ var value = spliceIt.join("+");
 
 switch (action) {
   case "concert-this":
+    if (value != undefined) {
+      concertThis(value);
+      log(action, value);
+    }
+    value = "rhye";
     concertThis(value);
     log(action, value);
     break;
   case "spotify-this-song":
+    if (value != undefined) {
+      spotifyThis(value);
+      log(action, value);
+    }
+    value = "the+sign";
     spotifyThis(value);
     log(action, value);
     break;
   case "movie-this":
+    if ((value = undefined)) {
+      movieThis(value);
+      log(action, value);
+    }
+    value = "mr+nobody";
     movieThis(value);
     log(action, value);
     break;
@@ -29,11 +44,8 @@ switch (action) {
     break;
 }
 //concert-this
-// just figure the value= rhye
+
 function concertThis(value) {
-  //   if ((value = undefined)) {
-  //     value = "rhye";
-  //   }
   var url =
     "https://rest.bandsintown.com/artists/" +
     value +
@@ -61,11 +73,8 @@ function concertThis(value) {
 }
 
 //function spotifyThis()
-//need to add value="The+Sign"
+
 function spotifyThis(value) {
-  //   if ((value = null)) {
-  //     value = "The+Sign";
-  //   }
   spotify.search({ type: "track", query: value }, function(err, data) {
     if (err) {
       return console.log(err);
@@ -82,8 +91,6 @@ function spotifyThis(value) {
 }
 
 //function movieThis()
-//working i just need to figure the api problem
-//value = 'mr+nobody'
 
 function movieThis(value) {
   var url = "http://www.omdbapi.com/?apikey=e7285efe&t=" + value;
@@ -128,23 +135,23 @@ function doWhat(value) {
     //source fore replace code https://stackoverflow.com/questions/19873002/how-to-replace-all-spaces-in-a-string/19873010
     myvalue = valueOne.replace(/ /g, "+");
     //console.log(value);
-    // if ((action = "concert-This")) {
-    //   value = myvalue;
-    //   concertThis(value);
-    // }
+    if ((action = "concert-This")) {
+      value = myvalue;
+      concertThis(value);
+    }
     if ((action = "spotify-this-song")) {
       value = myvalue;
       spotifyThis(value);
     }
-    // if ((action = "movie-this")) {
-    //   value = myvalue;
-    //   movieThis(value);
-    // }
+    if ((action = "movie-this")) {
+      value = myvalue;
+      movieThis(value);
+    }
   });
 }
 //Bonus
 function log() {
-  fs.appendFile("log.txt", ", " + action + " for " + value, function(err) {
+  fs.appendFile("log.txt", ", " + action + " for" + value, function(err) {
     if (err) {
       console.log(err);
     }

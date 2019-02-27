@@ -20,7 +20,7 @@ As this is a CLI App, it cannot be deployed to GitHub pages.However to be able t
 
   - Date of the Event
 
-  ![](Tests/Concert.mp4)
+  ![](Tests/Concert.gif)
 
 #### `node Liri.js spotify-this-song '<song name here>'`
 

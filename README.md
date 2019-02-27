@@ -4,11 +4,11 @@
 
 LIRI is a _Language_ Interpretation and Recognition Interface. LIRI will be a command line node app that takes in parameters and gives you back data.
 
-### Link
+## Link
 
 As this is a CLI App, it cannot be deployed to GitHub pages.However to be able to use this app you will have to download it to your computer, add your APIs and run it in the terminal.
 
-### Quick View
+## Quick View
 
 #### `node Liri.js concert-this <artist/band name here>`
 
@@ -19,6 +19,8 @@ As this is a CLI App, it cannot be deployed to GitHub pages.However to be able t
   - Venue location
 
   - Date of the Event
+
+  ![](Tests/spotify.webm)
 
 #### `node Liri.js spotify-this-song '<song name here>'`
 

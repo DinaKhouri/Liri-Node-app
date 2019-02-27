@@ -4,7 +4,7 @@
 
 LIRI is a _Language_ Interpretation and Recognition Interface. LIRI will be a command line node app that takes in parameters and gives you back data.
 
-## Link
+## How To Use
 
 As this is a CLI App, it cannot be deployed to GitHub pages.However to be able to use this app you will have to download it to your computer, add your APIs and run it in the terminal.
 

@@ -20,7 +20,7 @@ As this is a CLI App, it cannot be deployed to GitHub pages.However to be able t
 
   - Date of the Event
 
-  ![](Tests/spotify.webm)
+  ![](Tests/Concert.mp4)
 
 #### `node Liri.js spotify-this-song '<song name here>'`
 
@@ -33,6 +33,8 @@ As this is a CLI App, it cannot be deployed to GitHub pages.However to be able t
   - A preview link of the song from Spotify
 
   - The album that the song is from
+
+  ![](Tests/spotify.mp4)
 
 #### `node Liri.js movie-this '<movie name here>'`
 
@@ -48,6 +50,9 @@ As this is a CLI App, it cannot be deployed to GitHub pages.However to be able t
     * Plot of the movie.
     * Actors in the movie.
 
+![](Tests/Movie.mp4)
+
 #### `node Liri.js do-what-it-says`
 
 - Using the `fs` Node package, LIRI will take the text inside of random.txt and then use it to call one of LIRI's commands.
+  ![](Tests/WhatItSays.mp4)

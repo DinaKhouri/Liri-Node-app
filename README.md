@@ -10,7 +10,7 @@ As this is a CLI App, it cannot be deployed to GitHub pages.However to be able t
 
 ## Quick View
 
-#### `node Liri.js concert-this <artist/band name here>`
+### `node Liri.js concert-this <artist/band name here>`
 
 - This will search the Bands in Town Artist Events API for an artist and render the following information about each event to the terminal:
 
@@ -22,7 +22,7 @@ As this is a CLI App, it cannot be deployed to GitHub pages.However to be able t
 
   ![](Tests/Concert.gif)
 
-#### `node Liri.js spotify-this-song '<song name here>'`
+### `node Liri.js spotify-this-song '<song name here>'`
 
 - This will show the following information about the song in terminal/bash window
 
@@ -34,9 +34,9 @@ As this is a CLI App, it cannot be deployed to GitHub pages.However to be able t
 
   - The album that the song is from
 
-  ![](Tests/spotify.gif)
+  ![](Tests/Spotify.gif)
 
-#### `node Liri.js movie-this '<movie name here>'`
+### `node Liri.js movie-this '<movie name here>'`
 
 - This will output the following information to your terminal/bash window:
 
@@ -52,7 +52,7 @@ As this is a CLI App, it cannot be deployed to GitHub pages.However to be able t
 
 ![](Tests/Movie.gif)
 
-#### `node Liri.js do-what-it-says`
+### `node Liri.js do-what-it-says`
 
 - Using the `fs` Node package, LIRI will take the text inside of random.txt and then use it to call one of LIRI's commands.
   ![](Tests/WhatItSays.gif)
